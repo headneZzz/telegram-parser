@@ -98,7 +98,7 @@ func Run() {
 				return err
 			}
 			chatClasses := chats.GetChats()
-			channelName := "ТЕМКА В СХЕМКЕ"
+			channelName := os.Getenv("CHANNEL_NAME")
 			channelId, channelAccessHash := getChannelIdAndAccessHash(chatClasses, channelName, log)
 			if channelId == 0 || channelAccessHash == 0 {
 				return nil
